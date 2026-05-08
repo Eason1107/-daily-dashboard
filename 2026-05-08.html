@@ -15,13 +15,13 @@ header p{color:#64748b;margin-top:8px;font-size:1.05rem}
 .card-title{font-size:1.1rem;font-weight:700;color:#4F46E5;border-left:4px solid #4F46E5;padding-left:12px;margin-bottom:16px}
 .news-item{padding:14px 0;border-bottom:1px solid #f1f5f9}
 .news-item:last-child{border-bottom:none}
-.news-title{font-weight:600;color:#1e293b;margin-bottom:6px;font-size:0.95rem}
+a.news-title{display:block;font-weight:600;color:#1e293b;margin-bottom:6px;font-size:0.95rem;text-decoration:none;line-height:1.5}
+a.news-title:hover{color:#4F46E5}
 .news-desc{color:#64748b;font-size:0.875rem;line-height:1.6}
-.news-link{color:#4F46E5;text-decoration:none}
 .study-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .study-item{background:#f8faff;border-radius:10px;padding:14px}
 .study-label{font-size:0.75rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px}
-.study-value{font-weight:600;color:#1e293b;font-size:0.95rem}
+.study-value{font-weight:600;color:#1e293b;font-size:0.95rem;line-height:1.5}
 .motivation{background:linear-gradient(135deg,#4F46E5,#7C3AED);color:white;border-radius:16px;padding:28px;text-align:center;font-size:1.1rem;line-height:1.8;font-weight:500;margin-bottom:20px}
 footer{text-align:center;color:#94a3b8;font-size:0.8rem;padding:16px}
 @media(max-width:600px){.study-grid{grid-template-columns:1fr}}
@@ -33,14 +33,28 @@ footer{text-align:center;color:#94a3b8;font-size:0.8rem;padding:16px}
     <h1>早安，宗聖！</h1>
     <p>2026-05-08 &nbsp;|&nbsp; 星期五</p>
   </header>
+
   <div class="card">
     <div class="card-title">📈 今日財經新聞</div>
-    <div class="news-item"><div class="news-title">Oil prices rise after US and Iran exchange fire in Hormuz strait</div><div class="news-desc">US President Donald Trump said the ceasefire between Washington and Tehran is still in place.</div></div><div class="news-item"><div class="news-title">Instagram privacy tech is turned off today- what does this mean for your DMs?</div><div class="news-desc">The platform said it would remove end-to-end encrypted messages, a major U‑turn by parent company Meta.</div></div><div class="news-item"><div class="news-title">World Cup fans in China and India face broadcast uncertainty</div><div class="news-desc">Broadcasters in the two countries have yet to reach deals with Fifa, just weeks before the tournament is due to start.</div></div><div class="news-item"><div class="news-title">Portugal and Italy will not suspend digital border checks for Brits</div><div class="news-desc">Reports had suggested the countries were set to follow the example of Greece, which effectively suspended biometric checks for UK nationals.</div></div><div class="news-item"><div class="news-title">Trump gives EU ultimatum deadline to approve trade deal with US</div><div class="news-desc">Trump's deadline to the European Union came as a trade court ruled his global tariff policy violated US law.</div></div>
+    <p style="color:#94a3b8">今日財經新聞暫時無法取得。</p>
   </div>
+
   <div class="card">
     <div class="card-title">🤖 AI 產業動態</div>
-    <div class="news-item"><div class="news-title"><a href="https://bsuh.bearblog.dev/agents-need-control-flow/" class="news-link" target="_blank">Agents need control flow, not more prompts</a></div></div><div class="news-item"><div class="news-title"><a href="https://www.anthropic.com/research/natural-language-autoencoders" class="news-link" target="_blank">Natural Language Autoencoders: Turning Claude's Thoughts into Text</a></div></div><div class="news-item"><div class="news-title"><a href="https://deepmind.google/blog/alphaevolve-impact/" class="news-link" target="_blank">AlphaEvolve: Gemini-powered coding agent scaling impact across fields</a></div></div>
+    <div class="news-item">
+      <a class="news-title" href="https://technews.tw/2026/05/08/openai-introduces-three-audio-models-in-the-api/" target="_blank">OpenAI 發表三款語音模型，推理、翻譯及語音轉錄能力加速應用落地</a>
+      <div class="news-desc">OpenAI 一口氣推出 3 款全新的即時語音模型，各自針對不同用途具備獨特特性，幫助開發者開啟一系列全新的語 […]</div>
+    </div>
+<div class="news-item">
+      <a class="news-title" href="https://technews.tw/2026/05/08/middle-managers-transformation/" target="_blank">利用完就砍掉，中階主管陷生存危機</a>
+      <div class="news-desc">在 AI 出現之前，中階主管的誘因已經愈來愈小，頂著中階主管頭銜，只像是通往職業倦怠和痛苦的單程票，來自上層的 […]</div>
+    </div>
+<div class="news-item">
+      <a class="news-title" href="https://finance.technews.tw/2026/05/08/block-announces-first-quarter-2026-results/" target="_blank">Block 財報優  運用 AI 精簡人力、毛利激增 27%</a>
+      <div class="news-desc">Twitter 創辦人傑克·多西（Jack Dorsey）創立的金融科技公司 Block 財報表現超乎預期，主 […]</div>
+    </div>
   </div>
+
   <div class="card">
     <div class="card-title">📚 今日學習計畫</div>
     <div class="study-grid">
@@ -53,8 +67,9 @@ footer{text-align:center;color:#94a3b8;font-size:0.8rem;padding:16px}
       <span style="color:#64748b;font-size:0.875rem">📖 推薦資源：Anthropic 官方文件</span>
     </div>
   </div>
+
   <div class="motivation">✨ 困惑是理解的前一秒。別放棄，答案就快來了。</div>
-  <footer>由 管家 自動生成 · 2026-05-08 12:34</footer>
+  <footer>由 管家 自動生成 · 2026-05-08 13:00</footer>
 </div>
 </body>
 </html>
