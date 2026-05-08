@@ -28,11 +28,19 @@ def fetch_rss(url, max_items=5):
         print(f"RSS error ({url}): {e}")
     return items
 
-# 財經新聞：鉅亨網
+# 財經新聞：多個來源輪流嘗試
 print("抓取財經新聞...")
-biz_items = fetch_rss("https://news.cnyes.com/rss/cat/tw_stock", 5)
-if not biz_items:
-    biz_items = fetch_rss("https://news.cnyes.com/rss/cat/headline", 5)
+biz_sources = [
+    "https://www.cna.com.tw/rssfeed/wkss0004.xml",   # 中央社財經
+    "https://ec.ltn.com.tw/rss/news.xml",              # 自由時報財經
+    "https://money.udn.com/rssfeed/news/1001/5613",    # 聯合財經
+]
+biz_items = []
+for src in biz_sources:
+    biz_items = fetch_rss(src, 5)
+    if biz_items:
+        print(f"  來源：{src}")
+        break
 print(f"財經新聞：{len(biz_items)} 則")
 
 # AI 科技新聞：科技新報
