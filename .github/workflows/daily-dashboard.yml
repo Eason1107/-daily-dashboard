@@ -1,0 +1,28 @@
+name: 每日學習儀表板
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安裝 Python 套件
+        run: pip install requests
+
+      - name: 生成儀表板
+        run: python generate_dashboard.py
+
+      - name: 提交並推送
+        run: |
+          git config user.email "a0984520530@gmail.com"
+          git config user.name "管家-Agent"
+          git add *.html
+          git diff --staged --quiet || git commit -m "每日儀表板：$(TZ=Asia/Taipei date +%Y-%m-%d)"
+          git push
